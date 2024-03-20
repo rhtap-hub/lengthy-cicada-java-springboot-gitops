@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: lengthy-cicada-java-springboot-gitops
+  description: This is GitOps manifest for lengthy-cicada-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: lengthy-cicada-java-springboot
+    janus-idp.io/tekton: lengthy-cicada-java-springboot 
+    backstage.io/kubernetes-id: lengthy-cicada-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:lengthy-cicada-java-springboot
